@@ -1,9 +1,6 @@
 //type1
 function fibonacci(x) {
-    if (x == 0) {
-        return 0;
-    }
-    if (x == 1) {
+    if (x <= 2) {
         return 1;
     }
     return fibonacci(x - 1) + fibonacci(x - 2);
@@ -30,20 +27,12 @@ function fibonacci1(x) {
 print(fibonacci1(n));
 
 //type3
-function fibonacci2(x) {
-    var first = 1;
-    var second = 1;
-    var next;
-    var arr = [];
-    arr.push(first);
-    arr.push(second);
-    for (var i = 0; i <= n; i++) {
-        next = first + second;
-        first = second;
-        second = next;
-        arr.push(next);
+function fibonacci2(n) {
+    let arr = [1, 1];
+    for (let i = 2; i < n; i++) {
+        arr.push(arr[i-1] + arr[i-2]);
     }
-    return ( arr[x - 1]) ;
+    return (arr.pop());
 }
 print(fibonacci2(n));
     
